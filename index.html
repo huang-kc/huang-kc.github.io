@@ -22,7 +22,7 @@
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px}
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline;text-underline-offset:2px}
-  .role a b,.bio a b,.news .t a b{color:var(--accent)}
+  .role a b,.bio a b,.news a b{color:var(--accent)}
   .page{max-width:1040px;margin:0 auto;padding:clamp(28px,6vw,64px) clamp(20px,5vw,32px) 64px;position:relative}
   .theme-toggle{position:absolute;top:clamp(18px,4vw,30px);right:clamp(16px,5vw,32px);display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink-2);font-family:var(--sans);font-size:12.5px;line-height:1;cursor:pointer;transition:color .15s,border-color .15s;z-index:5}
   .theme-toggle:hover{color:var(--accent);border-color:var(--accent)}
@@ -61,11 +61,12 @@
   .lede{color:var(--ink-2);margin:12px 0 0}
   .lede b{color:var(--ink);font-weight:600}
 
-  .news{margin:10px 0 0;padding:0;list-style:none}
-  .news li{display:flex;gap:12px;padding:2.5px 0;line-height:1.5}
-  .news li:last-child{border-bottom:0}
-  .news .d{flex:0 0 78px;font-family:var(--mono);font-size:12.5px;color:var(--ink-3)}
-  .news .t{color:var(--ink-2)} .news .t b{color:var(--ink);font-weight:600}
+  .news{margin:10px 0 0;padding:0 0 0 22px;list-style:disc}
+  .news li{padding:2.5px 0;line-height:1.55;color:var(--ink-2)}
+  .news li::marker{color:var(--ink-3)}
+  .news .d{color:var(--ink-2);margin-right:3px}
+  .news li b{color:var(--ink);font-weight:600}
+
 
   /* publications — teaser-left / text-right (borrowed layout) */
   .pub{display:flex;gap:22px;padding:22px 0;border-bottom:1px solid var(--line);align-items:flex-start}
@@ -118,10 +119,10 @@
   <section>
     <h2>News</h2>
     <ul class="news">
-      <li><span class="d">2026 · 09</span><span class="t"><a href="https://arxiv.org/abs/2604.08995" target="_blank" rel="noopener"><b>Matrix-Game 3.0</b></a> — real-time, streaming interactive world model with long-horizon memory — is out.</span></li>
-      <li><span class="d">2026</span><span class="t">Paper on <b>autoregressive diffusion distillation</b> accepted to <a href="https://link.springer.com/chapter/10.1007/978-3-032-37196-6_5" target="_blank" rel="noopener"><b>ECCV 2026</b></a>.</span></li>
-      <li><span class="d">2025</span><span class="t">Started my Ph.D. at <b>NTU</b>; graduated M.Sc. from Nanjing University (LAMDA).</span></li>
-      <li><span class="d">2024</span><span class="t"><b>First-author</b> work on separated world models accepted to <a href="https://neurips.cc/virtual/2024/poster/95344" target="_blank" rel="noopener"><b>NeurIPS 2024</b></a>.</span></li>
+      <li><span class="d">[2026.09]</span> <a href="https://arxiv.org/abs/2604.08995" target="_blank" rel="noopener"><b>Matrix-Game 3.0</b></a> — real-time, streaming interactive world model with long-horizon memory — is out.</li>
+      <li><span class="d">[2026]</span> Paper on <b>autoregressive diffusion distillation</b> accepted to <a href="https://link.springer.com/chapter/10.1007/978-3-032-37196-6_5" target="_blank" rel="noopener"><b>ECCV 2026</b></a>.</li>
+      <li><span class="d">[2025]</span> Started my Ph.D. at <b>NTU</b>; graduated M.Sc. from Nanjing University (LAMDA).</li>
+      <li><span class="d">[2024]</span> <b>First-author</b> work on separated world models accepted to <a href="https://neurips.cc/virtual/2024/poster/95344" target="_blank" rel="noopener"><b>NeurIPS 2024</b></a>.</li>
     </ul>
   </section>
 
