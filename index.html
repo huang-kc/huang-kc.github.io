@@ -55,6 +55,8 @@
   .pub .fig{flex:0 0 230px;height:134px;border-radius:8px;border:1px solid var(--line);background:var(--tag);display:grid;place-items:center;overflow:hidden}
   .pub .fig img{width:100%;height:100%;object-fit:cover}
   .pub .fig .ph{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.05em}
+  .pub .fig.diag{background:#fff}
+  .pub .fig.diag img{object-fit:contain}
   .pub .body{flex:1;min-width:0}
   .pub .ttl{font-weight:700;color:var(--ink);font-size:16px;line-height:1.35}
   .pub .au{font-size:14px;margin:5px 0 2px;color:var(--accent)}
@@ -107,10 +109,10 @@
     <h2>Selected Publications <span class="sub">[ <a href="https://dblp.org/pid/368/5937.html">Full List</a> · <a href="https://scholar.google.com/citations?user=PQRU3nEAAAAJ">Google Scholar</a> ]</span></h2>
 
     <div class="pub">
-      <div class="fig"><span class="ph">figure</span></div>
+      <div class="fig"><img src="assets/pub-matrix.jpg" alt="Matrix-Game 3.0 gameplay"></div>
       <div class="body">
         <div class="ttl">Matrix-Game 3.0: Real-Time and Streaming Interactive World Model with Long-Horizon Memory</div>
-        <div class="au">Zile Wang, …, <span class="me">Kaichen Huang</span>, …, Bo An</div>
+        <div class="au">Zile Wang*, Zexiang Liu*, Jiaxing Li*, <span class="me">Kaichen Huang</span>*, Baixin Xu*, …, Yangguang Li <span class="eq">(*equal)</span></div>
         <div class="venue">Preprint, 2026</div>
         <div class="plinks"><a href="https://arxiv.org/abs/2604.08995">arXiv</a> · <a href="https://arxiv.org/pdf/2604.08995">pdf</a></div>
         <div class="tldr">A memory-augmented interactive world model for <b style="color:var(--ink)">720p real-time, streaming</b> video generation, achieving long-horizon temporal consistency for playable/controllable scenes.</div>
@@ -118,18 +120,18 @@
     </div>
 
     <div class="pub">
-      <div class="fig"><span class="ph">figure</span></div>
+      <div class="fig"><span class="ph">ECCV&nbsp;2026</span></div>
       <div class="body">
         <div class="ttl">Direct Autoregressive Diffusion Distillation via Error-Aware Causal Pretraining</div>
-        <div class="au">Jiaxing Li, <span class="me">Kaichen Huang</span>, …, Bo An, Yangguang Li</div>
+        <div class="au">Jiaxing Li, <span class="me">Kaichen Huang</span>, Baixin Xu, Zexiang Liu, …, Bo An, Yangguang Li</div>
         <div class="venue">ECCV, 2026</div>
         <div class="plinks"><a href="https://dblp.org/pid/368/5937.html">dblp</a></div>
-        <div class="tldr">Distills autoregressive diffusion models for efficient generation via error-aware causal pretraining. <span style="color:var(--ink-3)">(summary to refine)</span></div>
+        <div class="tldr"><b style="color:var(--ink)">Error Forcing</b> — an error-aware, parallelizable autoregressive video-diffusion framework that pretrains a robust causal model for direct few-step distillation, bypassing costly ODE trajectory matching.</div>
       </div>
     </div>
 
     <div class="pub">
-      <div class="fig"><span class="ph">figure</span></div>
+      <div class="fig diag"><img src="assets/pub-seex.jpg" alt="Separated world model (SeeX) framework"></div>
       <div class="body">
         <div class="ttl">Leveraging Separated World Model for Exploration in Visually Distracted Environments</div>
         <div class="au"><span class="me">Kaichen Huang</span>*, Shenghua Wan*, Minghao Shao, Shuai Feng, Le Gan, De-Chuan Zhan <span class="eq">(*equal)</span></div>
@@ -140,7 +142,7 @@
     </div>
 
     <div class="pub">
-      <div class="fig"><span class="ph">figure</span></div>
+      <div class="fig diag"><img src="assets/pub-sensor.jpg" alt="SENSOR active vision concept"></div>
       <div class="body">
         <div class="ttl">SENSOR: Imitate Third-Person Expert's Behaviors via Active Sensoring</div>
         <div class="au"><span class="me">Kaichen Huang</span>*, Minghao Shao*, Shenghua Wan, Hai-Hang Sun, Shuai Feng, Le Gan, De-Chuan Zhan <span class="eq">(*equal)</span></div>
@@ -151,7 +153,7 @@
     </div>
 
     <div class="pub">
-      <div class="fig"><span class="ph">figure</span></div>
+      <div class="fig diag"><img src="assets/pub-dida.jpg" alt="DIDA method framework"></div>
       <div class="body">
         <div class="ttl">DIDA: Denoised Imitation Learning based on Domain Adaptation</div>
         <div class="au"><span class="me">Kaichen Huang</span>*, Hai-Hang Sun*, Shenghua Wan, Minghao Shao, Shuai Feng, Le Gan, De-Chuan Zhan <span class="eq">(*equal)</span></div>
@@ -160,8 +162,6 @@
         <div class="tldr">Learns robust policies from <b style="color:var(--ink)">noisy, low-quality demonstrations</b> (sub-optimal actions or distractor-laden observations) via a domain-adaptation-based denoising approach.</div>
       </div>
     </div>
-
-    <p class="note">占位:每篇左侧 <b>figure</b> 换成论文 teaser 图(放进仓 <code>assets/</code> 或内嵌);两篇 2026 (NTU) 论文的完整作者、code/project 链接待补。</p>
   </section>
 
   <footer>
