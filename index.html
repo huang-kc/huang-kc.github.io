@@ -69,15 +69,15 @@
   .news a.pill:hover{background:var(--accent);color:#fff}
   .exp{display:flex;gap:18px;padding:15px 0;border-bottom:1px solid var(--line);align-items:center}
   .exp:last-child{border-bottom:0}
-  .exp .logo{flex:0 0 74px;width:74px;height:74px;border-radius:14px;display:grid;place-items:center;background:var(--tag);overflow:hidden;border:1px solid var(--line)}
-  .exp .logo img{width:100%;height:100%;object-fit:contain;padding:8px}
+  .exp .logo{flex:0 0 156px;height:86px;border-radius:12px;display:grid;place-items:center;background:#fff;overflow:hidden;border:1px solid var(--line)}
+  .exp .logo img{max-width:84%;max-height:76%;object-fit:contain}
   .exp .logo .mono{font-family:var(--serif);font-weight:700;font-size:17px;color:var(--tag-ink);letter-spacing:.02em}
   .exp .body{flex:1;min-width:0}
   .exp .date{float:right;color:var(--ink-3);font-family:var(--mono);font-size:12.5px;padding-left:10px}
   .exp .org{font-weight:700;color:var(--ink);font-size:16px;line-height:1.3}
   .exp .role{color:var(--ink-2);font-size:13.5px;margin-top:1px}
   .exp .desc{color:var(--ink-2);font-size:13.5px;margin-top:4px;line-height:1.5}
-  @media (max-width:560px){ .exp .date{float:none;display:block;padding:0 0 2px} }
+  @media (max-width:560px){ .exp{flex-direction:column;align-items:flex-start;gap:8px} .exp .logo{flex:none} .exp .date{float:none;display:block;padding:0 0 2px} }
   .news li{padding:2.5px 0;line-height:1.55;color:var(--ink-2)}
   .news li::marker{color:var(--ink-3)}
   .news .d{color:var(--ink-2);margin-right:3px}
@@ -286,7 +286,7 @@
   <section>
     <h2>Experience</h2>
     <div class="exp">
-      <div class="logo"><span class="mono">SW</span></div>
+      <div class="logo"><img src="assets/logo-skywork.png" alt="Skywork AI"></div>
       <div class="body">
         <span class="date">2025 – Present</span>
         <div class="org">Skywork AI · Riemann Dynamics</div>
@@ -295,7 +295,7 @@
       </div>
     </div>
     <div class="exp">
-      <div class="logo"><span class="mono">SAIL</span></div>
+      <div class="logo"><img src="assets/logo-shlab.png" alt="Shanghai AI Laboratory"></div>
       <div class="body">
         <span class="date">2024 – 2025</span>
         <div class="org">Shanghai AI Laboratory</div>
@@ -304,7 +304,7 @@
       </div>
     </div>
     <div class="exp">
-      <div class="logo"><span class="mono">HKUST</span></div>
+      <div class="logo"><img src="assets/logo-hkustgz.png" alt="HKUST (Guangzhou)"></div>
       <div class="body">
         <span class="date">2024</span>
         <div class="org">HKUST (Guangzhou)</div>
