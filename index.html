@@ -61,7 +61,12 @@
   .lede{color:var(--ink-2);margin:12px 0 0}
   .lede b{color:var(--ink);font-weight:600}
 
-  .news{margin:10px 0 0;padding:0 0 0 22px;list-style:disc}
+  .news{margin:10px 0 0;padding:0 14px 2px 22px;list-style:disc;max-height:348px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+  .news::-webkit-scrollbar{width:8px}
+  .news::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
+  .news::-webkit-scrollbar-track{background:transparent}
+  .news .pill{display:inline-block;background:var(--tag);color:var(--tag-ink);font-size:11.5px;font-weight:700;letter-spacing:.02em;padding:1px 8px;border-radius:999px;text-decoration:none;white-space:nowrap}
+  .news a.pill:hover{background:var(--accent);color:#fff}
   .news li{padding:2.5px 0;line-height:1.55;color:var(--ink-2)}
   .news li::marker{color:var(--ink-3)}
   .news .d{color:var(--ink-2);margin-right:3px}
@@ -119,20 +124,20 @@
   <section>
     <h2>News</h2>
     <ul class="news">
-      <li><span class="d">[2026.08]</span> <a href="https://arxiv.org/abs/2608.29910" target="_blank" rel="noopener"><b>Matrix-Game 3.5</b></a> is out — interactive worlds that now remember their geometry via patch memory, staying consistent for minutes of real-time play. 🌍</li>
-      <li><span class="d">[2026.07]</span> <a href="https://arxiv.org/abs/2607.26811" target="_blank" rel="noopener"><b>DistillAlign</b></a> — coaxing few-step video generators to cover the whole distribution instead of just chasing the easy modes. 🎯</li>
-      <li><span class="d">[2026.06]</span> Our <b>Error Forcing</b> paper landed at <a href="https://link.springer.com/chapter/10.1007/978-3-032-37196-6_5" target="_blank" rel="noopener"><b>ECCV 2026</b></a> — direct few-step video distillation, minus the ODE trajectory-matching pain. 🎉</li>
-      <li><span class="d">[2026.04]</span> <a href="https://arxiv.org/abs/2604.08995" target="_blank" rel="noopener"><b>Matrix-Game 3.0</b></a> — 720p, real-time, streaming playable worlds that keep their memory over long horizons. 🎮</li>
-      <li><span class="d">[2025.08]</span> Started my <a href="https://www.ntu.edu.sg" target="_blank" rel="noopener"><b>Ph.D. at NTU</b></a> with Prof. <a href="https://personal.ntu.edu.sg/boan/" target="_blank" rel="noopener">Bo An</a> — new city, new chapter. 🇸🇬</li>
-      <li><span class="d">[2025.07]</span> Helped build <a href="https://arxiv.org/abs/2507.18576" target="_blank" rel="noopener"><b>SafeWork-R1</b></a> at Shanghai AI Lab — a model where safety and capability grow up together. 🛡️</li>
-      <li><span class="d">[2025.06]</span> Wrapped up my <b>M.Sc.</b> at <a href="https://www.lamda.nju.edu.cn/" target="_blank" rel="noopener">Nanjing University (LAMDA)</a>. 🎓</li>
-      <li><span class="d">[2024.12]</span> Put out a <a href="https://arxiv.org/abs/2412.02104" target="_blank" rel="noopener"><b>survey on explainable &amp; interpretable MLLMs</b></a> — a field map for actually seeing inside multimodal models. 🔍</li>
-      <li><span class="d">[2024.10]</span> <a href="https://arxiv.org/abs/2410.04819" target="_blank" rel="noopener"><b>MINER</b></a> — hunting the modality-specific neurons hiding in MLLMs (mute just 2% and they fall apart). 🧠</li>
-      <li><span class="d">[2024.09]</span> <a href="https://neurips.cc/virtual/2024/poster/95344" target="_blank" rel="noopener"><b>SeeX</b></a> got into <b>NeurIPS 2024</b> — still exploring well even when the background is full of distractions. 🎉</li>
-      <li><span class="d">[2024.04]</span> <a href="https://arxiv.org/abs/2404.03386" target="_blank" rel="noopener"><b>SENSOR</b></a> — skip the costly domain alignment; just let the agent turn its head to match the expert’s viewpoint. 👀</li>
-      <li><span class="d">[2024.04]</span> <a href="https://arxiv.org/abs/2404.03382" target="_blank" rel="noopener"><b>DIDA</b></a> — learning clean skills from messy, noisy demonstrations by telling signal from noise. 🧹</li>
-      <li><span class="d">[2023.02]</span> My first paper (undergrad): an <a href="http://ckjs.ijournals.cn/ckjs/ch/reader/view_abstract.aspx?flag=1&amp;file_no=20230215&amp;journal_id=ckjs" target="_blank" rel="noopener"><b>IMF-based error analysis</b></a> that teases systematic errors out of external-ballistic measurements. 📡</li>
-      <li><span class="d">[2022.08]</span> Began my <b>M.Sc.</b> at <a href="https://www.lamda.nju.edu.cn/" target="_blank" rel="noopener">Nanjing University (LAMDA)</a>, advised by Prof. <a href="https://www.lamda.nju.edu.cn/zhandc/" target="_blank" rel="noopener">De-Chuan Zhan</a> — the RL journey begins. 🌱</li>
+      <li><span class="d">[2026.08]</span> <a href="https://arxiv.org/abs/2608.29910" target="_blank" rel="noopener"><b>Matrix-Game 3.5</b></a> — geometry-aware patch memory for minute-long, real-time interactive world generation. 🌍</li>
+      <li><span class="d">[2026.07]</span> <a href="https://arxiv.org/abs/2607.26811" target="_blank" rel="noopener"><b>DistillAlign</b></a> — balancing mode-covering and mode-seeking for higher coverage and diversity in few-step video distillation. 🎯</li>
+      <li><span class="d">[2026.06]</span> <b>Error Forcing</b> accepted to <a class="pill" href="https://link.springer.com/chapter/10.1007/978-3-032-37196-6_5" target="_blank" rel="noopener">ECCV 2026</a> — direct few-step video distillation without ODE trajectory matching. 🎉</li>
+      <li><span class="d">[2026.04]</span> <a href="https://arxiv.org/abs/2604.08995" target="_blank" rel="noopener"><b>Matrix-Game 3.0</b></a> — 720p real-time streaming interactive world model with long-horizon memory. 🎮</li>
+      <li><span class="d">[2025.08]</span> Started my <b>Ph.D.</b> at <a href="https://www.ntu.edu.sg" target="_blank" rel="noopener">NTU</a>, advised by Prof. <a href="https://personal.ntu.edu.sg/boan/" target="_blank" rel="noopener">Bo An</a>. 🇸🇬</li>
+      <li><span class="d">[2025.07]</span> Contributed to <a href="https://arxiv.org/abs/2507.18576" target="_blank" rel="noopener"><b>SafeWork-R1</b></a> (Shanghai AI Lab) — coevolving safety and capability in multimodal reasoning. 🛡️</li>
+      <li><span class="d">[2025.06]</span> Received my <b>M.Sc.</b> from <a href="https://www.lamda.nju.edu.cn/" target="_blank" rel="noopener">Nanjing University (LAMDA)</a>. 🎓</li>
+      <li><span class="d">[2024.12]</span> <a href="https://arxiv.org/abs/2412.02104" target="_blank" rel="noopener"><b>Survey on explainable &amp; interpretable MLLMs</b></a> — a unified taxonomy across data, model, and training. 🔍</li>
+      <li><span class="d">[2024.10]</span> <a href="https://arxiv.org/abs/2410.04819" target="_blank" rel="noopener"><b>MINER</b></a> — identifying modality-specific neurons in MLLMs; disabling ~2% causes substantial performance degradation. 🧠</li>
+      <li><span class="d">[2024.09]</span> <b>SeeX</b> accepted to <a class="pill" href="https://neurips.cc/virtual/2024/poster/95344" target="_blank" rel="noopener">NeurIPS 2024</a> — unsupervised RL for robust exploration under visual distractions. 🎉</li>
+      <li><span class="d">[2024.04]</span> <a href="https://arxiv.org/abs/2404.03386" target="_blank" rel="noopener"><b>SENSOR</b></a> — third-person imitation via active sensoring: move the camera to match the expert instead of aligning domains. 👀</li>
+      <li><span class="d">[2024.04]</span> <a href="https://arxiv.org/abs/2404.03382" target="_blank" rel="noopener"><b>DIDA</b></a> — denoised imitation from noisy, low-quality demonstrations via domain adaptation. 🧹</li>
+      <li><span class="d">[2023.02]</span> First paper (undergrad) — an <a href="http://ckjs.ijournals.cn/ckjs/ch/reader/view_abstract.aspx?flag=1&amp;file_no=20230215&amp;journal_id=ckjs" target="_blank" rel="noopener"><b>IMF-based method</b></a> for error analysis of external-ballistic measurement data. 📡</li>
+      <li><span class="d">[2022.08]</span> Began my <b>M.Sc.</b> at <a href="https://www.lamda.nju.edu.cn/" target="_blank" rel="noopener">Nanjing University (LAMDA)</a>, advised by Prof. <a href="https://www.lamda.nju.edu.cn/zhandc/" target="_blank" rel="noopener">De-Chuan Zhan</a>. 🌱</li>
     </ul>
   </section>
 
