@@ -25,11 +25,15 @@
   .role a b,.bio a b,.news a b{color:var(--accent)}
   .page{max-width:1040px;margin:0 auto;padding:clamp(28px,6vw,64px) clamp(20px,5vw,32px) 64px;position:relative}
   .namebar{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-  .theme-seg{margin-left:auto;flex:0 0 auto;display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--panel);overflow:hidden;box-shadow:0 2px 8px rgba(31,64,122,.08)}
-  .theme-seg button{display:grid;place-items:center;width:34px;height:28px;border:0;background:transparent;color:var(--ink-3);cursor:pointer;padding:0;transition:background .15s,color .15s}
+  .theme-seg{position:relative;margin-left:auto;flex:0 0 auto;display:inline-flex;align-items:center;padding:3px;background:var(--tag);border-radius:999px;border:1px solid var(--line)}
+  .theme-seg .thumb{position:absolute;top:3px;left:3px;width:30px;height:24px;border-radius:999px;background:#fff;box-shadow:0 1px 3px rgba(31,64,122,.16);transition:transform .22s cubic-bezier(.4,0,.2,1)}
+  @media (prefers-color-scheme:dark){ .theme-seg .thumb{background:#39414f;box-shadow:0 1px 3px rgba(0,0,0,.4)} }
+  :root[data-theme="light"] .theme-seg .thumb{background:#fff;box-shadow:0 1px 3px rgba(31,64,122,.16)}
+  :root[data-theme="dark"] .theme-seg .thumb{background:#39414f;box-shadow:0 1px 3px rgba(0,0,0,.4)}
+  .theme-seg[data-active="dark"] .thumb{transform:translateX(30px)}
+  .theme-seg button{position:relative;z-index:1;display:grid;place-items:center;width:30px;height:24px;border:0;background:transparent;color:var(--ink-3);cursor:pointer;padding:0;transition:color .15s}
+  .theme-seg button.active{color:var(--ink)}
   .theme-seg button svg{width:15px;height:15px;display:block}
-  .theme-seg button.active{background:var(--accent);color:#fff}
-  .theme-seg button:not(.active):hover{color:var(--ink)}
 
   .head{display:flex;gap:clamp(20px,4vw,36px);align-items:flex-start}
   img.avatar{flex:0 0 auto;width:clamp(150px,20vw,200px);height:clamp(150px,20vw,200px);border-radius:50%;object-fit:cover;box-shadow:0 6px 22px rgba(31,64,122,.18);border:3px solid var(--panel)}
@@ -125,7 +129,7 @@
     <div class="intro">
       <div class="namebar">
         <h1>Kaichen Huang <img class="cname" src="assets/name.png" alt="黄楷宸"></h1>
-      <div class="theme-seg" id="themeSeg" role="group" aria-label="Color theme">
+      <div class="theme-seg" id="themeSeg" role="group" aria-label="Color theme"><span class="thumb" aria-hidden="true"></span>
         <button type="button" data-tv="light" aria-label="Light theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v1.6M12 20.4V22M3.6 12H2M22 12h-1.6M5.3 5.3l1.1 1.1M17.6 17.6l1.1 1.1M18.7 5.3l-1.1 1.1M6.4 17.6l-1.1 1.1"/></svg></button>
         <button type="button" data-tv="dark" aria-label="Dark theme"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8z"/></svg></button>
       </div>
@@ -369,7 +373,7 @@
     var mq=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;
     function saved(){ try{return localStorage.getItem(KEY);}catch(e){return null;} }
     function sysMode(){ return (mq&&mq.matches)?"dark":"light"; }
-    function hi(m){ btns.forEach(function(b){ b.classList.toggle("active", b.getAttribute("data-tv")===m); }); }
+    function hi(m){ seg.setAttribute("data-active",m); btns.forEach(function(b){ b.classList.toggle("active", b.getAttribute("data-tv")===m); }); }
     var sv=saved();
     if(sv==="light"||sv==="dark"){ root.setAttribute("data-theme",sv); hi(sv); }
     else { hi(sysMode()); }
