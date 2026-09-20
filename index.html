@@ -135,6 +135,28 @@
     <h2>Selected Publications <span class="sub">[ <a href="https://dblp.org/pid/368/5937.html">Full List</a> · <a href="https://scholar.google.com/citations?user=PQRU3nEAAAAJ">Google Scholar</a> ]</span></h2>
 
     <div class="pub">
+      <div class="fig diag"><img src="assets/pub-mg35.jpg" alt="Matrix-Game 3.5 teaser"></div>
+      <div class="body">
+        <div class="ttl">Matrix-Game 3.5: Enhancing Real-Time Streaming Interactive World Models with Patch Memory</div>
+        <div class="au">Runjia Qian*, Zile Wang*, Jihai Zhang*, Kai Zou*, Wei Yu*, Jiaxing Li*, Zexiang Liu*, Yaokun Li, Fei Kang, <span class="me">Kaichen Huang</span>, Mengyin An, Haobo Zhang, Biao Jiang, Jiahua Wang, Haofeng Sun, Yang Liu, Yangguang Li <span class="eq">(*equal)</span></div>
+        <div class="venue">Preprint, 2026</div>
+        <div class="plinks"><a href="https://arxiv.org/abs/2608.29910" target="_blank" rel="noopener">arXiv</a> · <a href="https://arxiv.org/pdf/2608.29910" target="_blank" rel="noopener">pdf</a></div>
+        <div class="tldr clamp">Interactive world models extend video generation from offline clip synthesis toward persistent simulation of interactive virtual worlds, enabling applications in games, robotics, embodied agents, and XR. Achieving stable long-horizon interactive generation, however, remains challenging, as the model must simultaneously preserve scene geometry, dynamic consistency, and camera control while supporting real-time autoregressive generation. Building upon Matrix-Game 3.0, we present Matrix-Game 3.5, as shown in Figure 1, which advances real-time interactive world generation toward geometry-aware and long-horizon consistent simulation through three key improvements. First, we propose a unified geometry-aware memory framework, whose patch-memory and tiled-PRoPE components introduce no additional learnable parameters, combining explicit 3D patch retrieval with projective camera conditioning to enable geometry-consistent camera control and faithful long-horizon scene recall. Second, we introduce a static-dynamic disentangled world representation that separately models static scene geometry and dynamic subjects, preserving both geometric consistency and subject identity throughout long-horizon generation. Third, we develop a two-stage progressive real-time distillation framework that converts a bidirectional diffusion model into a few-step causal generator through Perceptual Flow Matching and curriculum based Self-Rollout DMD, enabling minute-long real-time interactive generation. Extensive experiments demonstrate that, with a unified training corpus spanning Unreal simulation environments, open-world games, and internet videos, MatrixGame 3.5 achieves strong performance in long-horizon scene recall, precise camera control, subject consistency, prompt-driven world generation, and stable real-time open-world interaction.</div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="fig diag"><img src="assets/pub-distillalign.jpg" alt="DistillAlign init+DMD pipelines"></div>
+      <div class="body">
+        <div class="ttl">DistillAlign: Coordinating Mode Covering and Mode Seeking in Autoregressive Video Distillation</div>
+        <div class="au">Jiaxing Li*, Kai Zou*, Cindy Zhou, <span class="me">Kaichen Huang</span>, Junyao Gao, Zile Wang, Yang Liu, Bin Liu, Bo An, Yangguang Li <span class="eq">(*equal)</span></div>
+        <div class="venue">Preprint, 2026</div>
+        <div class="plinks"><a href="https://arxiv.org/abs/2607.26811" target="_blank" rel="noopener">arXiv</a> · <a href="https://arxiv.org/pdf/2607.26811" target="_blank" rel="noopener">pdf</a></div>
+        <div class="tldr clamp">Existing autoregressive video distillation methods commonly adopt a Distribution Matching Distillation (DMD)-based multi-stage pipeline. However, they typically decouple the initialization and DMD stages -- which then pursue different target distributions -- and judge the intermediate student mainly by visual scores such as VBench. In this paper, we revisit this design from a distributional perspective. Given the mode-seeking nature of the distribution matching loss, a good initialization should match the mode coverage of the target DMD teacher, rather than merely pursuing high quality. To analyze this, we introduce a distributional evaluation protocol that measures precision and coverage between student and teacher distributions in a shared latent space. It exposes differences hidden by visual scores: some initializations reach high precision but low coverage, leading to suboptimal refinement, while mode-covering ones preserve broader support. Furthermore, even when the target distributions are aligned, DMD's reverse-KL objective can still drive the student toward high-probability teacher regions in late training, reducing coverage and diversity. To address this, we propose joint distillation, which combines DMD's mode-seeking objective with a Consistency Distillation-based mode-covering constraint. Experiments show that our method improves generation quality, coverage, and diversity; notably, even with a Wan-1.3B DMD teacher, it outperforms baselines refined with Wan-14B, underscoring the importance of distributional alignment in autoregressive video distillation.</div>
+      </div>
+    </div>
+
+    <div class="pub">
       <div class="fig"><img src="assets/pub-matrix.jpg" alt="Matrix-Game 3.0 gameplay"></div>
       <div class="body">
         <div class="ttl">Matrix-Game 3.0: Real-Time and Streaming Interactive World Model with Long-Horizon Memory</div>
@@ -157,6 +179,28 @@
     </div>
 
     <div class="pub">
+      <div class="fig diag"><img src="assets/pub-safework.jpg" alt="SafeWork-R1 safety vs capability benchmarks"></div>
+      <div class="body">
+        <div class="ttl">SafeWork-R1: Coevolving Safety and Intelligence under the AI-45° Law</div>
+        <div class="au">Shanghai AI Lab · 118 authors incl. <span class="me">Kaichen Huang</span></div>
+        <div class="venue">Preprint, 2025</div>
+        <div class="plinks"><a href="https://arxiv.org/abs/2507.18576" target="_blank" rel="noopener">arXiv</a> · <a href="https://arxiv.org/pdf/2507.18576" target="_blank" rel="noopener">pdf</a></div>
+        <div class="tldr clamp">We introduce SafeWork-R1, a cutting-edge multimodal reasoning model that demonstrates the coevolution of capabilities and safety. It is developed by our proposed SafeLadder framework, which incorporates large-scale, progressive, safety-oriented reinforcement learning post-training, supported by a suite of multi-principled verifiers. Unlike previous alignment methods such as RLHF that simply learn human preferences, SafeLadder enables SafeWork-R1 to develop intrinsic safety reasoning and self-reflection abilities, giving rise to safety `aha' moments. Notably, SafeWork-R1 achieves an average improvement of 46.54% over its base model Qwen2.5-VL-72B on safety-related benchmarks without compromising general capabilities, and delivers state-of-the-art safety performance compared to leading proprietary models such as GPT-4.1 and Claude Opus 4. To further bolster its reliability, we implement two distinct inference-time intervention methods and a deliberative search mechanism, enforcing step-level verification. Finally, we further develop SafeWork-R1-InternVL3-78B, SafeWork-R1-DeepSeek-70B, and SafeWork-R1-Qwen2.5VL-7B. All resulting models demonstrate that safety and capability can co-evolve synergistically, highlighting the generalizability of our framework in building robust, reliable, and trustworthy general-purpose AI.</div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="fig diag"><img src="assets/pub-survey.jpg" alt="Explainable MLLM survey framework"></div>
+      <div class="body">
+        <div class="ttl">Explainable and Interpretable Multimodal Large Language Models: A Comprehensive Survey</div>
+        <div class="au">Yunkai Dang, <span class="me">Kaichen Huang</span>, Jiahao Huo, Yibo Yan, Sirui Huang, Dongrui Liu, Mengxi Gao, Jie Zhang, Chen Qian, Kun Wang, Yong Liu, Jing Shao, Hui Xiong, Xuming Hu</div>
+        <div class="venue">Preprint, 2024</div>
+        <div class="plinks"><a href="https://arxiv.org/abs/2412.02104" target="_blank" rel="noopener">arXiv</a> · <a href="https://arxiv.org/pdf/2412.02104" target="_blank" rel="noopener">pdf</a></div>
+        <div class="tldr clamp">The rapid development of Artificial Intelligence (AI) has revolutionized numerous fields, with large language models (LLMs) and computer vision (CV) systems driving advancements in natural language understanding and visual processing, respectively. The convergence of these technologies has catalyzed the rise of multimodal AI, enabling richer, cross-modal understanding that spans text, vision, audio, and video modalities. Multimodal large language models (MLLMs), in particular, have emerged as a powerful framework, demonstrating impressive capabilities in tasks like image-text generation, visual question answering, and cross-modal retrieval. Despite these advancements, the complexity and scale of MLLMs introduce significant challenges in interpretability and explainability, essential for establishing transparency, trustworthiness, and reliability in high-stakes applications. This paper provides a comprehensive survey on the interpretability and explainability of MLLMs, proposing a novel framework that categorizes existing research across three perspectives: (I) Data, (II) Model, (III) Training &amp; Inference. We systematically analyze interpretability from token-level to embedding-level representations, assess approaches related to both architecture analysis and design, and explore training and inference strategies that enhance transparency. By comparing various methodologies, we identify their strengths and limitations and propose future research directions to address unresolved challenges in multimodal explainability. This survey offers a foundational resource for advancing interpretability and transparency in MLLMs, guiding researchers and practitioners toward developing more accountable and robust multimodal AI systems.</div>
+      </div>
+    </div>
+
+    <div class="pub">
       <div class="fig diag"><img src="assets/pub-seex.jpg" alt="Separated world model (SeeX) framework"></div>
       <div class="body">
         <div class="ttl">Leveraging Separated World Model for Exploration in Visually Distracted Environments</div>
@@ -164,6 +208,17 @@
         <div class="venue">NeurIPS, 2024</div>
         <div class="plinks"><a href="https://dblp.org/pid/368/5937.html">paper</a></div>
         <div class="tldr clamp">Model-based unsupervised reinforcement learning (URL) has gained prominence for reducing environment interactions and learning general skills using intrinsic rewards. However, distractors in observations can severely affect intrinsic reward estimation, leading to a biased exploration process, especially in environments with visual inputs like images or videos. To address this challenge, we propose a bi-level optimization framework named Separation-assisted eXplorer (SeeX). In the inner optimization, SeeX trains a separated world model to extract exogenous and endogenous information, minimizing uncertainty to ensure task relevance. In the outer optimization, it learns a policy on imaginary trajectories generated within the endogenous state space to maximize task-relevant uncertainty. Evaluations on multiple locomotion and manipulation tasks demonstrate SeeX's effectiveness.</div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="fig diag"><img src="assets/pub-miner.jpg" alt="MINER modality-specific neurons concept"></div>
+      <div class="body">
+        <div class="ttl">MINER: Mining the Underlying Pattern of Modality-Specific Neurons in Multimodal Large Language Models</div>
+        <div class="au"><span class="me">Kaichen Huang</span>, Jiahao Huo, Yibo Yan, Kun Wang, Yutao Yue, Xuming Hu</div>
+        <div class="venue">Preprint, 2024</div>
+        <div class="plinks"><a href="https://arxiv.org/abs/2410.04819" target="_blank" rel="noopener">arXiv</a> · <a href="https://arxiv.org/pdf/2410.04819" target="_blank" rel="noopener">pdf</a></div>
+        <div class="tldr clamp">In recent years, multimodal large language models (MLLMs) have significantly advanced, integrating more modalities into diverse applications. However, the lack of explainability remains a major barrier to their use in scenarios requiring decision transparency. Current neuron-level explanation paradigms mainly focus on knowledge localization or language- and domain-specific analyses, leaving the exploration of multimodality largely unaddressed. To tackle these challenges, we propose MINER, a transferable framework for mining modality-specific neurons (MSNs) in MLLMs, which comprises four stages: (1) modality separation, (2) importance score calculation, (3) importance score aggregation, (4) modality-specific neuron selection. Extensive experiments across six benchmarks and two representative MLLMs show that (I) deactivating ONLY 2% of MSNs significantly reduces MLLMs performance (0.56 to 0.24 for Qwen2-VL, 0.69 to 0.31 for Qwen2-Audio), (II) different modalities mainly converge in the lower layers, (III) MSNs influence how key information from various modalities converges to the last token, (IV) two intriguing phenomena worth further investigation, i.e., semantic probing and semantic telomeres. The source code is available at this URL.</div>
       </div>
     </div>
 
@@ -199,6 +254,7 @@
         <div class="tldr clamp">We propose a method for analyzing external ballistic measurement errors caused by various conditions, which result in unobservable random errors and latent systematic errors. Using Intrinsic Mode Function (IMF) energy inflection points, this method categorizes IMFs into high-frequency errors, mixed information, and useful information, effectively compensating for systematic errors and improving positioning accuracy.</div>
       </div>
     </div>
+  
   </section>
 
   <footer>
