@@ -1,0 +1,148 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1.7cm]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+% ---- fonts (match homepage: serif + CJK for the Chinese name) ----
+\setmainfont{Georgia}
+\setCJKmainfont[Path=/System/Library/Fonts/]{STHeiti Medium.ttc}
+
+% ---- palette (from homepage tokens) ----
+\definecolor{accent}{HTML}{2F5AA8}
+\definecolor{ink}{HTML}{1B1B1E}
+\definecolor{inkII}{HTML}{565A63}
+\definecolor{inkIII}{HTML}{8A8F99}
+\definecolor{venue}{HTML}{2E7D46}
+\definecolor{rule}{HTML}{D8DCE3}
+
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent, pdftitle={Kaichen Huang CV}}
+
+% ---- section style: serif bold + thin rule (like homepage h2) ----
+\titleformat{\section}{\large\bfseries\color{ink}}{}{0em}{}[\vspace{2pt}{\color{rule}\titlerule[0.9pt]}]
+\titlespacing{\section}{0pt}{11pt}{5pt}
+
+\setlist[itemize]{leftmargin=1.15em,itemsep=1.5pt,topsep=2pt,parsep=0pt}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+\linespread{1.05}
+
+% helpers
+\newcommand{\me}{\textbf{Kaichen Huang}}
+\newcommand{\dt}[1]{\hfill{\color{inkIII}\footnotesize #1}}
+\newcommand{\eq}{\textsuperscript{*}}
+
+% experience/education entry: {org}{date}{role}{desc}
+\newcommand{\entry}[4]{%
+  \textbf{\color{ink}#1}\dt{#2}\\[1pt]
+  {\color{inkII}\small #3}\\[1pt]
+  {\color{inkII}\small #4}\par\vspace{5pt}}
+
+% publication: {authors}{title}{venue}
+\newcounter{pubc}
+\newcommand{\pub}[3]{%
+  \stepcounter{pubc}%
+  \noindent[\arabic{pubc}]\hspace{4pt}\begingroup\small
+  #1. \textit{#2}. {\color{venue}#3}.\endgroup\par\vspace{4pt}}
+
+\begin{document}
+
+% ======================= HEADER =======================
+{\fontsize{26}{30}\selectfont\bfseries\color{ink} Kaichen Huang}\;\;{\Large 黄楷宸}\\[4pt]
+{\color{inkII} Ph.D. Student, College of Computing and Data Science, Nanyang Technological University}\\[3pt]
+{\small
+\href{mailto:kaichen001@e.ntu.edu.sg}{kaichen001@e.ntu.edu.sg} \;\textcolor{inkIII}{|}\;
+\href{https://huang-kc.github.io}{huang-kc.github.io} \;\textcolor{inkIII}{|}\;
+\href{https://scholar.google.com/citations?user=PQRU3nEAAAAJ}{Google Scholar} \;\textcolor{inkIII}{|}\;
+\href{https://dblp.org/pid/368/5937.html}{DBLP} \;\textcolor{inkIII}{|}\;
+\href{https://orcid.org/0009-0001-3226-7899}{ORCID} \;\textcolor{inkIII}{|}\;
+\href{https://github.com/huang-kc}{GitHub}}
+\vspace{2pt}
+
+% ======================= EDUCATION =======================
+\section*{Education}
+\entry{Nanyang Technological University \normalfont\textemdash\ College of Computing and Data Science}{2025.08 -- Present}
+{Ph.D. Student \textcolor{inkIII}{$\cdot$} Advisor: Prof.\ Bo An}{}
+
+\entry{Nanjing University \normalfont\textemdash\ School of Artificial Intelligence}{2022.09 -- 2025.06}
+{M.Sc. (GPA 4.56/5.0) \textcolor{inkIII}{$\cdot$} LAMDA Group \textcolor{inkIII}{$\cdot$} Advisor: Prof.\ De-Chuan Zhan}{}
+
+\entry{Nanjing University \normalfont\textemdash\ School of Artificial Intelligence}{2018.09 -- 2022.06}
+{B.Sc.}{}
+
+% ======================= RESEARCH INTERESTS =======================
+\section*{Research Interests}
+{\color{inkII}\small World models and interactive / streaming video generation; reinforcement and imitation learning; interpretability of multimodal large language models.}
+
+% ======================= PUBLICATIONS =======================
+\section*{Publications}
+{\color{inkIII}\footnotesize \eq\,Equal contribution.}\vspace{3pt}
+
+\pub{Runjia Qian\eq, Zile Wang\eq, Jihai Zhang\eq, Kai Zou\eq, Wei Yu\eq, Jiaxing Li\eq, Zexiang Liu\eq, Yaokun Li, Fei Kang, \me, Mengyin An, et al.}{Matrix-Game 3.5: Enhancing Real-Time Streaming Interactive World Models with Patch Memory}{Preprint, 2026}
+
+\pub{Jiaxing Li\eq, Kai Zou\eq, Cindy Zhou, \me, Junyao Gao, Zile Wang, Yang Liu, Bin Liu, Bo An, Yangguang Li}{DistillAlign: Coordinating Mode Covering and Mode Seeking in Autoregressive Video Distillation}{Preprint, 2026}
+
+\pub{Zile Wang\eq, Zexiang Liu\eq, Jiaxing Li\eq, \me\eq, Baixin Xu\eq, Fei Kang, Mengyin An, et al., Yangguang Li}{Matrix-Game 3.0: Real-Time and Streaming Interactive World Model with Long-Horizon Memory}{Preprint, 2026}
+
+\pub{Jiaxing Li\eq, \me\eq, Baixin Xu\eq, Zexiang Liu, Xianglong He, Zile Wang, Junyao Gao, Yang Liu, Ying He, Bo An, Yangguang Li}{Direct Autoregressive Diffusion Distillation via Error-Aware Causal Pretraining}{ECCV, 2026}
+
+\pub{Wenshu Fan, Shenghua Wan, Xinchun Li, Hai-Hang Sun, \me, Le Gan, De-Chuan Zhan}{Behavior Cloning Optimization via Secondary Learning}{CCML, 2025}
+
+\pub{Shanghai AI Lab (\me\ as contributor)}{SafeWork-R1: Coevolving Safety and Intelligence under the AI-45\textdegree\ Law}{Preprint, 2025}
+
+\pub{Yunkai Dang\eq, \me\eq, Jiahao Huo\eq, Yibo Yan, Sirui Huang, Dongrui Liu, Mengxi Gao, Jie Zhang, Chen Qian, Kun Wang, Yong Liu, Jing Shao, Hui Xiong, Xuming Hu}{Explainable and Interpretable Multimodal Large Language Models: A Comprehensive Survey}{Under review, TPAMI}
+
+\pub{\me\eq, Shenghua Wan\eq, Minghao Shao, Shuai Feng, Le Gan, De-Chuan Zhan}{Leveraging Separated World Model for Exploration in Visually Distracted Environments}{NeurIPS, 2024}
+
+\pub{\me, Jiahao Huo, Yibo Yan, Kun Wang, Yutao Yue, Xuming Hu}{MINER: Mining the Underlying Pattern of Modality-Specific Neurons in Multimodal Large Language Models}{Preprint, 2024 (submitted to ICLR 2025)}
+
+\pub{\me\eq, Minghao Shao\eq, Shenghua Wan, Hai-Hang Sun, Shuai Feng, Le Gan, De-Chuan Zhan}{SENSOR: Imitate Third-Person Expert's Behaviors via Active Sensoring}{Preprint, 2024}
+
+\pub{\me\eq, Hai-Hang Sun\eq, Shenghua Wan, Minghao Shao, Shuai Feng, Le Gan, De-Chuan Zhan}{DIDA: Denoised Imitation Learning based on Domain Adaptation}{Preprint, 2024}
+
+\pub{Yihan Liu, \me, Yechao Bai}{An Error Analysis Method for Externally Measured Data}{Measurement and Control Technology, 2023}
+
+% ======================= EXPERIENCE =======================
+\section*{Experience}
+\entry{Skywork AI \normalfont$\cdot$ Riemann Dynamics}{2025.08 -- 2026.10}
+{Joint-Training Ph.D. Student \textcolor{inkIII}{$\cdot$} Mentors: Yangguang Li, Wei Yu}
+{Real-time interactive world models and video generation --- Matrix-Game 3.0 / 3.5, DistillAlign, Error Forcing (ECCV 2026).}
+
+\entry{Shanghai AI Laboratory}{2024.11 -- 2025.03}
+{Research Intern \textcolor{inkIII}{$\cdot$} Mentor: Jing Shao}
+{Multimodal safety and reasoning --- SafeWork-R1.}
+
+\entry{Hong Kong University of Science and Technology (Guangzhou)}{2024.06 -- 2024.09}
+{Research Assistant \textcolor{inkIII}{$\cdot$} Mentor: Xuming Hu}
+{Interpretability of multimodal LLMs --- MINER, and a survey on explainable \& interpretable MLLMs.}
+
+\entry{Ministry of Industry and Information Technology (MIIT)}{2023.06 -- 2023.12}
+{Data Processing Engineer}
+{Automated analysis system for industrial economic-trend data; resulted in a granted software patent.}
+
+\entry{Pengcheng Laboratory}{2022.06 -- 2023.03}
+{Assistant Engineer \textcolor{inkIII}{$\cdot$} Mentor: Tong Zhang}
+{Medical imaging for congenital heart disease --- a ViT / MAE-based ellipse-detection method for robust fetal echocardiography measurement.}
+
+% ======================= HONORS =======================
+\section*{Honors \& Awards}
+\begin{itemize}
+  \item[] {\color{inkIII}\footnotesize 2023}\hspace{6pt} Academic Scholarship, Nanjing University
+  \item[] {\color{inkIII}\footnotesize 2020}\hspace{6pt} First Prize (East China Region), National University Bio-network Design Competition
+  \item[] {\color{inkIII}\footnotesize 2019}\hspace{6pt} Third Prize, 9th Nanjing University College Student Career Planning Competition
+\end{itemize}
+
+% ======================= SERVICE =======================
+\section*{Academic Service}
+{\color{inkII}\small Conference Reviewer: NeurIPS, ICML, ICLR, AAAI.}
+
+% ======================= LANGUAGE =======================
+\section*{Language \& Test Scores}
+{\color{inkII}\small IELTS: Overall 7.0 (L 7.5 / R 8.5 / S 5.5 / W 6.5) \quad\textcolor{inkIII}{$\cdot$}\quad GRE: 321 (V 151 / Q 170 / AW 4.5)}
+
+\end{document}
